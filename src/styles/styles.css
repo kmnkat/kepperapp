@@ -1,8 +1,190 @@
-body {
-  background-color: yellow;
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.note {
+:root {
+  --yellow: #ffe227;
+  --purple: #4d375d;
+  --black: #121013;
+  --black-transparent: rgba(18, 16, 19, 0.2);
+  --gray: #dfdfdf;
+  --white: #faf9f9;
+  font-size: 18px;
+  --family: "Lexend", sans-serif;
+}
+
+body {
+  background-color: var(--gray);
+  font-family: var(--family);
+  min-height: 100vh;
+}
+
+.header {
+  background-color: var(--yellow);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 2rem;
+}
+
+.header .header__icon,
+.header .header__title {
+  color: var(--white);
+  font-size: 2.5em;
+  -webkit-filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--black-transparent));
+          filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--black-transparent));
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.5rem;
+}
+
+.footer a {
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--yellow);
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+}
+
+.footer a:visited {
+  color: var(--black);
+}
+
+.footer a:hover {
+  color: var(--yellow);
+  background-color: var(--black);
+}
+
+.mainContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.mainContent .mainContent_notes {
+  font-size: 0.9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  justify-items: flex-start;
+  margin: 1rem 3rem;
+}
+
+.mainContent .mainContent_notes .note {
+  background-color: var(--white);
+  max-width: 15rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 auto;
+          flex: 1 auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0.3rem 0.3rem 0.3rem var(--black-transparent);
+          box-shadow: 0.3rem 0.3rem 0.3rem var(--black-transparent);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mainContent .mainContent_notes .note button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  color: var(--yellow);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.mainContent .mainContent_notes .note button:hover {
+  color: var(--black-transparent);
+}
+
+.addingNote {
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  margin: 1rem;
+}
+
+.addingNote .addingNote__addNoteField {
+  -ms-flex-item-align: center;
+      align-self: center;
   background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0.3rem 0.3rem 0.3rem var(--black-transparent);
+          box-shadow: 0.3rem 0.3rem 0.3rem var(--black-transparent);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.addingNote .addingNote__addNoteField .addNoteField__titleInput > input {
+  width: calc(100% - 2rem);
+  border: none;
+  min-height: 3rem;
+  padding: 0.1rem 1rem;
+  font-family: var(--family);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.addingNote .addingNote__addNoteField .addNoteField__contentInput > textarea {
+  width: calc(100% - 2rem);
+  padding: 0.5rem 1rem;
+  border: none;
+  resize: none;
+  font-family: var(--family);
+  font-size: 0.8rem;
+}
+
+.addingNote .addNoteField__addButton {
+  position: absolute;
+  bottom: -1.5rem;
+  right: 1.5rem;
+  background-color: var(--yellow);
 }
 /*# sourceMappingURL=styles.css.map */

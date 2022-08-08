@@ -4,9 +4,11 @@ function Footer() {
   let date = new Date();
   let year = date.getFullYear();
   return (
-    <div>
-      <p>{year}</p>
-    </div>
+    <footer className="footer">
+      <p>
+        Keeper {year}. Coded by <a href="https://github.com/kmnkat">kmnkat</a>
+      </p>
+    </footer>
   );
 }
 

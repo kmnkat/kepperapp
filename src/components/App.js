@@ -25,16 +25,20 @@ function App() {
   return (
     <div>
       <Header></Header>
-      <AddNote adding={addNote}></AddNote>
-      {notesAr.map((noteItem, index) => (
-        <Note
-          id={index}
-          key={index}
-          title={noteItem.title}
-          content={noteItem.content}
-          deleting={deleteNote}
-        ></Note>
-      ))}
+      <div className="mainContent">
+        <AddNote adding={addNote}></AddNote>
+        <div className="mainContent_notes">
+          {notesAr.map((noteItem, index) => (
+            <Note
+              id={index}
+              key={index}
+              title={noteItem.title}
+              content={noteItem.content}
+              deleting={deleteNote}
+            ></Note>
+          ))}
+        </div>
+      </div>
       <Footer></Footer>
     </div>
   );

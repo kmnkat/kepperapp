@@ -1,7 +1,140 @@
-body {
-  background-color: yellow;
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.note {
-  background-color: white;
+:root {
+  --yellow: #ffe227;
+  --purple: #4d375d;
+  --black: #121013;
+  --black-transparent: rgba(18, 16, 19, 0.2);
+  --gray: #dfdfdf;
+  --white: #faf9f9;
+
+  font-size: 18px;
+  --family: "Lexend", sans-serif;
+}
+
+body {
+  background-color: var(--gray);
+  font-family: var(--family);
+  min-height: 100vh;
+}
+
+.header {
+  background-color: var(--yellow);
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 2rem;
+  .header__icon,
+  .header__title {
+    color: var(--white);
+    font-size: 2.5em;
+    filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--black-transparent));
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 0.5rem;
+  a {
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--yellow);
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    &:visited {
+      color: var(--black);
+    }
+    &:hover {
+      color: var(--yellow);
+      background-color: var(--black);
+    }
+  }
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem;
+
+  .mainContent_notes {
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    justify-items: flex-start;
+    margin: 1rem 3rem;
+    .note {
+      background-color: var(--white);
+      max-width: 15rem;
+      flex: 1 auto;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0.3rem 0.3rem 0.3rem var(--black-transparent);
+      display: flex;
+      flex-direction: column;
+
+      button {
+        align-self: flex-end;
+        color: var(--yellow);
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        &:hover {
+          color: var(--black-transparent);
+        }
+      }
+    }
+  }
+}
+
+.addingNote {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 1rem;
+  .addingNote__addNoteField {
+    align-self: center;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0.3rem 0.3rem 0.3rem var(--black-transparent);
+    border-radius: 1rem;
+    overflow: hidden;
+    .addNoteField__titleInput > input {
+      width: calc(100% - 2rem);
+      border: none;
+      min-height: 3rem;
+      padding: 0.1rem 1rem;
+      font-family: var(--family);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .addNoteField__contentInput > textarea {
+      width: calc(100% - 2rem);
+      padding: 0.5rem 1rem;
+      border: none;
+      resize: none;
+      font-family: var(--family);
+      font-size: 0.8rem;
+    }
+  }
+  .addNoteField__addButton {
+    position: absolute;
+    bottom: -1.5rem;
+    right: 1.5rem;
+    background-color: var(--yellow);
+  }
 }

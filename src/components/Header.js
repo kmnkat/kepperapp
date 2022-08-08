@@ -1,9 +1,11 @@
 import React from "react";
+import CreateRoundedIcon from "@mui/icons-material/CreateRounded";
 
 function Header() {
   return (
-    <header>
-      <h1>Keeper</h1>
+    <header className="header">
+      <CreateRoundedIcon className="header__icon" />
+      <h1 className="header__title">Keeper</h1>
     </header>
   );
 }
